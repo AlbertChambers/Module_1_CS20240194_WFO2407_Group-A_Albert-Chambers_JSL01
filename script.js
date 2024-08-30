@@ -4,8 +4,11 @@ document.getElementById("validateButton").addEventListener("click", function() {
     const isValid = validateSyntax(petString);
 
     // Boolean (condition ? expression1 : expression2)
-    const result = isValid ? "Valid Syntax!" : "Invalid Syntax!";
-    document.getElementById("result").innerText = result;
+    const resultText = isValid ? "Valid Syntax!" : "Invalid Syntax!";
+    const resultClass = isValid ? "valid" : "invalid";
+
+    document.getElementById("result").innerText = resultText;
+    document.getElementById("indicator").className = resultClass;
 });
 
 function validateSyntax(petString) {
